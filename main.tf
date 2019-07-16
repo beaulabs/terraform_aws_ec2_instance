@@ -60,8 +60,10 @@ resource "aws_security_group" "sshaccess" {
   #vpc_id      = "${var.vpc_id}"
 
   tags {
-    name        = "${var.name}"
-    environment = "${var.environment}"
+    Name        = "${var.svr_name}"
+    Owner       = "${var.tag_name}"
+    TTL         = "${var.tag_ttl}"
+    Environment = "${var.tag_environment}"
   }
   # SSH
   ingress {
