@@ -54,7 +54,7 @@ data "aws_ami" "ubuntu" {
 # Configure security group to allow SSH access to instance
 
 resource "aws_security_group" "sshaccess" {
-  name        = "${var.name}-allow-ssh"
+  name        = "${var.svr_name}-allow-ssh"
   description = "SSH and Internal Traffic"
 
   #vpc_id      = "${var.vpc_id}"
