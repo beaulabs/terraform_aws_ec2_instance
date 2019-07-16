@@ -1,8 +1,8 @@
-variable "name" {
+variable "svr_name" {
   default = "beau-devbox"
 }
 
-variable "tag-name" {
+variable "tag_name" {
   default = "beau@hashicorp"
 }
 
@@ -26,12 +26,7 @@ variable "ami_id" {
 
 variable "instance_type" {
   description = "type of EC2 instance to provision."
-  default     = "t2.micro"
-}
-
-variable "environment" {
-  description = "name to pass to Name tag"
-  default     = "beaulabs-development"
+  default     = "t2.small"
 }
 
 variable "myaws_keypair" {
