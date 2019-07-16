@@ -1,5 +1,17 @@
 variable "name" {
-  default = "beau-ubuntu-developmentbox"
+  default = "beau-devbox"
+}
+
+variable "tag-name" {
+  default = "beau@hashicorp"
+}
+
+variable "tag_ttl" {
+  default = "48"
+}
+
+variable "tag_environment" {
+  default = "development"
 }
 
 variable "aws_region" {

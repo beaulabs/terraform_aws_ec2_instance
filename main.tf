@@ -20,8 +20,9 @@ resource "aws_instance" "ubuntu" {
   vpc_security_group_ids = ["${aws_security_group.sshaccess.id}"]
   key_name               = "${var.myaws_keypair}"
   tags {
-    Name        = "${var.name}"
-    environment = "${var.environment}"
+    Name        = "${var.tag-name}"
+    TTL         = "${var.tag_ttl}"
+    environment = "${var.tag_environment}"
   }
 }
 

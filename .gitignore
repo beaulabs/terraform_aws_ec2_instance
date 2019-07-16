@@ -1,20 +1,25 @@
 # Compiled files
 *.tfstate
+*.tfstate.*
 *.tfstate.backup
 *.tfstate.lock.info
 
-# Directories
+# Module directory
+.terraform
 .terraform/
-.vagrant/
+.terraform/*
+**/.terraform/*
+
+# Terraform CLI Configuration
+.terraformrc
+
+# Terraform Variables
+*.tfvars
 
 # SSH Keys
 *.pem
 
-# Backup files
-*.bak
-
-# Ignored Terraform files
-*gitignore*.tf
-
 # Draft files
-*.draft.txt
+*.draft
+
+.DS_store
