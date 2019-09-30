@@ -33,3 +33,4 @@ variable "myaws_keypair" {
   description = "name of existing aws keypair to supply"
   default     = "beau-uswest1"
 }
+

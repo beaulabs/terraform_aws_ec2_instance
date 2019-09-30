@@ -19,7 +19,7 @@
 # SSH Keys
 *.pem
 
-# Draft files
+# Draft and backup files
 *.draft
-
+*.tfbk
 .DS_store

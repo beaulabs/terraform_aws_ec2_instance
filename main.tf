@@ -1,29 +1,28 @@
 terraform {
-  required_version = ">= 0.11.0"
+  required_version = ">= 0.12"
 }
 
 provider "aws" {
-  region = "${var.aws_region}"
+  region = var.aws_region
 }
 
 resource "aws_instance" "ubuntu" {
   # Uncomment line below to have Terraform find the latest Ubuntu image for you
-  ami = "${data.aws_ami.ubuntu.id}"
+  ami = data.aws_ami.ubuntu.id
 
   # Uncomment line below and update ami image id in variables.tf if
   # you have a specific ami image id to use
 
-
   #ami           = "${var.ami_id}"
 
-  instance_type          = "${var.instance_type}"
-  vpc_security_group_ids = ["${aws_security_group.sshaccess.id}"]
-  key_name               = "${var.myaws_keypair}"
-  tags {
-    Name        = "${var.svr_name}"
-    Owner       = "${var.tag_name}"
-    TTL         = "${var.tag_ttl}"
-    environment = "${var.tag_environment}"
+  instance_type          = var.instance_type
+  vpc_security_group_ids = [aws_security_group.sshaccess.id]
+  key_name               = var.myaws_keypair
+  tags = {
+    Name        = var.svr_name
+    Owner       = var.tag_name
+    TTL         = var.tag_ttl
+    environment = var.tag_environment
   }
 }
 
@@ -59,12 +58,13 @@ resource "aws_security_group" "sshaccess" {
 
   #vpc_id      = "${var.vpc_id}"
 
-  tags {
-    Name        = "${var.svr_name}"
-    Owner       = "${var.tag_name}"
-    TTL         = "${var.tag_ttl}"
-    Environment = "${var.tag_environment}"
+  tags = {
+    Name        = var.svr_name
+    Owner       = var.tag_name
+    TTL         = var.tag_ttl
+    Environment = var.tag_environment
   }
+
   # SSH
   ingress {
     from_port   = 22
@@ -79,3 +79,4 @@ resource "aws_security_group" "sshaccess" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
