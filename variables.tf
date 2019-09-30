@@ -1,5 +1,5 @@
 variable "svr_name" {
-  default = "beau-sandbox"
+  default = "beau-demo-sandbox"
 }
 
 variable "tag_name" {
