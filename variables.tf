@@ -1,5 +1,5 @@
 variable "svr_name" {
-  default = "beau-dev-sandbox"
+  default = "beau-midnight"
 }
 
 variable "tag_name" {
