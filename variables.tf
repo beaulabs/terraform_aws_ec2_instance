@@ -26,7 +26,7 @@ variable "ami_id" {
 
 variable "instance_type" {
   description = "type of EC2 instance to provision."
-  default     = "m4.large"
+  default     = "t2.micro"
 }
 
 variable "myaws_keypair" {
