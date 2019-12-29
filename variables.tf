@@ -1,5 +1,5 @@
 variable "svr_name" {
-  default = "beau-dishdemo"
+  default = "beau-snowday"
 }
 
 variable "tag_name" {
