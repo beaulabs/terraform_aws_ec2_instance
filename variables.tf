@@ -16,7 +16,7 @@ variable "tag_environment" {
 
 variable "aws_region" {
   description = "AWS region"
-  default     = "us-west-1"
+  default     = "us-west-2"
 }
 
 variable "ami_id" {
@@ -26,7 +26,7 @@ variable "ami_id" {
 
 variable "instance_type" {
   description = "type of EC2 instance to provision."
-  default     = "t2.micro"
+  default     = "t2.nano"
 }
 
 variable "myaws_keypair" {
